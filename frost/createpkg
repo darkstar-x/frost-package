@@ -42,40 +42,58 @@ CHECK_PKG() {
 
 CREATE_PKG() {
   pkg_name="$1"
-  
-  if tar -cf ../${pkg_name} .; then
-    printf '%b' "${GRN}The package has been created on ../${pkg_name}\n${END}"
-    return 0
-  else
-    printf "The package was not created\n"
-    exit 1
-  fi
 
-  return 0
+  if [ "$VERBOSE" = 1 ]; then
+    if tar -cvf../pkg_name .; then
+      printf '%b' "${GRN}The package has been created on ../${pkg_name}\n${END}"
+    else
+      printf "The package was not created\n"
+      exit 1
+    fi
+  else
+    if tar -cf ../${pkg_name} .; then
+      printf '%b' "${GRN}The package has been created on ../${pkg_name}\n${END}"
+      return 0
+    else
+      printf "The package was not created\n"
+      exit 1
+    fi
+  fi
+}
+
+USAGE() {
+  echo "Usage mode"
 }
 
 while [ -n "$1" ]; do
-  --created|-c)
-    CMD=$1
-    shift
-  ;;
-  --verbose|-v)
-    VERBOSE=1
-    shift
-  *.frost)
-    PKG=$1
-    shift
-  ;;
+  case "$1" in
+    --created|-c)
+      CMD=$1
+      shift
+    ;;
+
+    --verbose|-v)
+      VERBOSE=1
+      shift
+    ;;
+
+    *.frost)
+      PKG=$1
+      shift
+    ;;
+
+    *)USAGE
+    ;;
+  esac
 done
 
 #---- START
-case "$1" in
+case "$CMD" in
     --create|-c)
-    shift
-    if [ -z "$1" ]; then
+    if [ -z "$CMD" ]; then
       printf '%b' "${red}The package name is required.${end}\n"
       exit 1
     fi
-    CHECK_PKG "$@" || exit 1
-    CREATE_PKG "$@"
+    CHECK_PKG "$PKG" || exit 1
+    CREATE_PKG "$PKG"
 esac
