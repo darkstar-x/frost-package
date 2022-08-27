@@ -11,6 +11,8 @@ END=$'\e[0m'
 
 #---- GLOBAL VARIABLES
 export pkg_ext="frost"
+export version='0.1.0'
+
 export LC_ALL=C
 export LANG=C
 
@@ -44,7 +46,7 @@ CREATE_PKG() {
   pkg_name="$1"
 
   if [ "$VERBOSE" = 1 ]; then
-    if tar -cvf../pkg_name .; then
+    if tar -cvf../${pkg_name} .; then
       printf '%b' "${GRN}The package has been created on ../${pkg_name}\n${END}"
     else
       printf "The package was not created\n"
@@ -62,8 +64,29 @@ CREATE_PKG() {
 }
 
 USAGE() {
-  echo "Usage mode"
+  cat << EOF
+    ${RED}FROST PACKAGE MANAGER${END} >> create - options
+
+    ${YLW}--create, -c${END}
+      |
+      \`-.- Create a package with .frost. It needs to be in the main directory of the package.
+        |_ The package will be created a directory above.
+
+    ${YLW}--help, -h${END}
+      |
+      \`-- Exibe as instruções de uso.
+  
+    ${YLW}--verbose, -v${END}
+
+    Author: hxvrmxnv
+    Email: leonardimelo43@gmail.com
+EOF
 }
+
+# Goto to help
+if [ -z "$1" ]; then
+  USAGE
+fi
 
 while [ -n "$1" ]; do
   case "$1" in
@@ -82,7 +105,14 @@ while [ -n "$1" ]; do
       shift
     ;;
 
-    *)USAGE
+    --help|-v)
+      USAGE
+      exit 1
+    ;;
+
+    *)
+      USAGE
+      exit 1
     ;;
   esac
 done
