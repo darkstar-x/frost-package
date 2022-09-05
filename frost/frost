@@ -1,22 +1,23 @@
 #!/bin/bash
 
-#---- COLORS
-RED=$'\e[1;31m'
-GRN=$'\e[1;32m'
-YLW=$'\e[1;33m'
-BLU=$'\e[1;34m'
-MAG=$'\e[1;35m'
-CYN=$'\e[1;36m'
+### COLORS
+RED=$'\e[0;31m'
+GRN=$'\e[0;32m'
+YLW=$'\e[0;33m'
+BLU=$'\e[0;34m'
+MAG=$'\e[0;35m'
+CYN=$'\e[0;36m'
 END=$'\e[0m'
 
-#---- GLOBAL VARIABLES
+## GLOBAL VARIABLES
 export pkg_ext="frost"
 export version='0.1.0'
 
+### Performance for UTF-8
 export LC_ALL=C
 export LANG=C
 
-#---- FUNCTION
+### FUNCTION
 CHECK_PKG() {
   pkg_name="$@"
 
@@ -63,18 +64,17 @@ CREATE_PKG() {
   fi
 }
 
+# Usage Mode
 USAGE() {
   cat << EOF
     ${RED}FROST PACKAGE MANAGER${END} >> create - options
 
     ${YLW}--create, -c${END}
-      |
-      \`-.- Create a package with .frost. It needs to be in the main directory of the package.
-        |_ The package will be created a directory above.
+      -> Create a package with .frost. It needs to be in the main directory of the package.
+      -> The package will be created a directory above.
 
     ${YLW}--help, -h${END}
-      |
-      \`-- Exibe as instruções de uso.
+      -> Instructions for use.
   
     ${YLW}--verbose, -v${END}
 
@@ -83,7 +83,7 @@ USAGE() {
 EOF
 }
 
-# Goto to help
+### Goto to help
 if [ -z "$1" ]; then
   USAGE
 fi
@@ -117,7 +117,7 @@ while [ -n "$1" ]; do
   esac
 done
 
-#---- START
+# START
 case "$CMD" in
     --create|-c)
     if [ -z "$CMD" ]; then
