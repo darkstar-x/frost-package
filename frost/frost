@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ### COLORS
 RED=$'\e[0;31m'

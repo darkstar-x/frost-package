@@ -24,15 +24,11 @@ _SPINNER()
     	'frost wAit'
     	'frost waIt'
     	'frost waiT'
-    	'frost wait  /'
-    	'frost wait  |'
-    	'frost wait  \'
-    	'frost wait  \'
-      'frost wait  -'
-      'frost wait  /'
-      'frost wait  |'
-      'frost wait  \ '
-      'frost wait  \'
+    	'frost wait .'
+    	'frost wait ..'
+    	'frost wait ...'
+    	'frost wait ..'
+      'frost wait.'
     )
 
     while :; do
