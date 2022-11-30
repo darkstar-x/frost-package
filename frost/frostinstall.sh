@@ -1,14 +1,11 @@
-#/usr/bin/env sh 
+#!/usr/bin/env sh 
 
-###################################
-# Author: Leonardi Melo           #
-# Version: 1.0.0                  #
-# Email: leonardimelo43@gmail.com #
-###################################
+# Author: Leonardi Melo
+# Version: 1.0.0
+# Email: leonardimelo43@gmail.com
+# Install the package generated with frost and generate a track file
 
-# Install the package generated with frostpkg and generate a track file
-
-### Config Tracker
+### Config Package Tracker
 TRACK='/var/log/frost'
 
 ### Creating the tracker directory
@@ -24,7 +21,7 @@ INSTALL()
   tar xvf "$package" -C /ssf/virtual
 }
 
-
+### User check params
 case $1 in
   -i|--install)
       shift
