@@ -1,15 +1,17 @@
 #/usr/bin/env sh 
 
-#Dev: HXVRMXNV
-#Version: 1.0.0
-#Email: leonardimelo43@gmail.com
+###################################
+# Author: Leonardi Melo           #
+# Version: 1.0.0                  #
+# Email: leonardimelo43@gmail.com #
+###################################
 
-#Desc: Install the package generated with frostpkg and generate a track file
+# Install the package generated with frostpkg and generate a track file
 
-### Config
+### Config Tracker
 TRACK='/var/log/frost'
 
-#creating the tracker directory
+### Creating the tracker directory
 [ ! -d "$TRACK" ] && mkdir -v "$TRACK"
 
 ### Functions

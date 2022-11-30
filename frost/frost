@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+###################################
+# Author: Leonardi Melo           #
+# Email: leonardimelo43@gmail.com #
+# #################################
+
 ### COLORS
 RED=$'\e[0;31m'
 GRN=$'\e[0;32m'
@@ -78,7 +83,7 @@ USAGE() {
   
     ${YLW}--verbose, -v${END}
 
-    Author: hxvrmxnv
+    Author: darkstar-x 
     Email: leonardimelo43@gmail.com
 EOF
 }
