@@ -22,17 +22,17 @@ export version='0.1.0'
 export LC_ALL=C
 export LANG=C
 
-### FUNCTION
+### VALIDATE PARAMS
 CHECK_PKG() {
   pkg_name="$@"
 
-  # Check package extension
+  ### Check package extension
   if ! echo "$pkg_name" | grep "\b${pkg_ext}\b$"; then
     printf '%s\n' "${RED}The package format must be .${pkg_ext}${END}"
     return 1
   fi
 
-  # Check white spaces
+  ### Check white spaces
   if echo "$pkg_name" | grep -qE "[[:space:]]+"; then
     printf '%s\n' "${RED}Do not use spaces in the name.${END}"
     printf '%s\n' "${YLW}Exiting...${END}"
@@ -50,6 +50,7 @@ CHECK_PKG() {
   return 0
 }
 
+### CREATE PACKAGE 
 CREATE_PKG() {
   pkg_name="$1"
 
@@ -71,7 +72,7 @@ CREATE_PKG() {
   fi
 }
 
-# Usage Mode
+### HELP MODE
 USAGE() {
   cat << EOF
     ${RED}FROST PACKAGE MANAGER${END} >> create - options
