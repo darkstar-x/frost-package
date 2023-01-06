@@ -19,14 +19,12 @@
 
 <img src="images/banner.jpg" alt="Main banner" >
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 <!-- GETTING STARTED -->
 <div id="getting-started">
 
 ## Getting Started
 
-#### Prerequisites for frost pkg
+#### Prerequisites for DrogonPKG
 ![image](https://img.shields.io/badge/bash%20%3E%3D%204.4.18-gray?style=plastic&)
 ![image](https://img.shields.io/badge/tar%20%3E%3D%201.34-gray?style=plastic&)
 
