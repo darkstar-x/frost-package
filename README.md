@@ -3,7 +3,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <h3 align="center">FrostPKG</h3>
+  <h3 align="center">Drogon Package Manager</h3>
    <strong>Attention this project is still under constant development, this entire guide may be changed.</strong>
   <p align="center">
     <br />
@@ -15,9 +15,9 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-> Frost pkg is a low-level package manager written sh
+> DrogonPKG is a low-level package manager for linux written sh
 
-<img src="images/frost.jpg" alt="Main banner" >
+<img src="images/banner.jpg" alt="Main banner" >
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -31,9 +31,9 @@
 bash >= 4.4.18
 `
 `
-p7zip >= 16.02
+tar >= 1.34
 `
-#### Manual installation
+## Manual installation
 
 Clone the repository
 ```sh
@@ -41,5 +41,10 @@ $ git clone https://github.com/hxvrmxnv/frost_pkg.git
 ```
 As ROOT, create the directories
 ```sh
-# mv frost /usr/sbin
+# mv drogon /usr/sbin
 ```
+## Usage
+
+```sh
+drogon --help
+
